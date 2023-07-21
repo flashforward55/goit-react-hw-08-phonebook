@@ -1,33 +1,29 @@
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
-import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
-import LoginIcon from '@mui/icons-material/Login';
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
-export const AuthNav = () => {
-  return (
-    <ul>
-      <li>
-        <AuthTitle to="/register">
-          Register
-          <AppRegistrationIcon sx={{ marginLeft: '5px' }} />
-        </AuthTitle>
-      </li>
-      <li>
-        <AuthTitle to="/login">
-          Log In
-          <LoginIcon sx={{ marginLeft: '5px' }} />
-        </AuthTitle>
-      </li>
-    </ul>
-  );
-};
+export const AuthList = styled.ul`
+    display: flex;
+    justify-content: center;
+`;
+
+export const AuthListItem = styled.li`
+    cursor: pointer;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover {
+        transform: scale(1.15);
+        text-shadow: 0px 5px 10px bisque;
+    }
+    &:not(:last-child) {
+        margin-right: 16px;
+    }
+`;
 
 export const AuthTitle = styled(NavLink)`
-  display: flex;
-  font-weight: 500;
-  font-size: 16px;
-  color: #fff;
-  &.active {
-    color: bisque;
-  }
+    display: flex;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    &.active {
+        color: bisque;
+    }
 `;

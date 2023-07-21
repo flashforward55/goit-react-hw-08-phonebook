@@ -1,25 +1,41 @@
-import { useState } from 'react';
+import { useState } from "react";
+import { VisibilityIconStyle, VisibilityOffIconStyle, ButtonForVisibility, KeyIconStyle } from "../icons/icons.styled";
+import styled from 'styled-components';
 
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 export const PasswordField = () => {
   const [passwordShown, setPasswordShown] = useState(false);
 
   return (
-    <label>
+    <ClassicLabelForm>
       Password
-      <input type={passwordShown ? 'text' : 'password'} name="password" />
-      <button type="button" onClick={() => setPasswordShown(!passwordShown)}>
+      <ClassicInputForm type={passwordShown ? "text" : "password"} name="password" />
+      <KeyIconStyle />
+      <ButtonForVisibility type="button" onClick={() => setPasswordShown(!passwordShown)}>
         {passwordShown ? <VisibilityOffIconStyle /> : <VisibilityIconStyle />}
-      </button>
-    </label>
+      </ButtonForVisibility>
+    </ClassicLabelForm>
   );
 };
 
-export const VisibilityIconStyle = () => (
-  <VisibilityIcon sx={{ fill: '#082911' }} />
-);
+export const ClassicInputForm = styled.input`
+  display: block;
+  width: 240px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 35px;
+  margin-top: 4px;
+  outline: none;
+  border: 2px solid #082911;
+  border-radius: 4px;
 
-export const VisibilityOffIconStyle = () => (
-  <VisibilityOffIcon sx={{ fill: '#082911' }} />
-);
+  &:first-child {
+    margin-bottom: 16px;
+  }
+`;
+
+export const ClassicLabelForm = styled.label`
+    position: relative;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+`;

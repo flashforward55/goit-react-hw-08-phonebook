@@ -5,12 +5,19 @@ export const NavigateLink = ({ way, text }) => {
   const word = way.slice(1, way.length);
 
   return (
-    <h2 style={{ marginTop: '8px' }}>
+    <SecondTitle>
       {text} <NavToLink to={way}>{word}</NavToLink>?
-    </h2>
+    </SecondTitle>
   );
 };
 
 export const NavToLink = styled(NavLink)`
-  color: bisque;
+    color: bisque;
+`;
+
+export const SecondTitle = styled.h2`
+    text-align: center;
+    margin-bottom: 16px;
+    color: #fff;
+    margin-top: 8px;
 `;

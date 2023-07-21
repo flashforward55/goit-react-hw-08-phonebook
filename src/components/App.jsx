@@ -1,43 +1,73 @@
-import { useEffect } from 'react';
+import { lazy, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts, selectIsLoading, selectError } from 'redux/selector';
-import { fetchContacts } from 'redux/operations/contactsOperations';
-import ContactForm from './ContactForm';
-import ContactList from './ContactList';
-import Filter from './Filter';
-import Loading from './Loading';
-import { AppContainer, Phonebook, Title } from './App.styled';
+import { selectAuth } from 'redux/selector';
+import { clearAuthHeader, refreshUser } from 'redux/operations/userOperations';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from './Layout';
+import { Home } from 'pages/Home';
+import { Register } from 'pages/Register';
+import { Login } from 'pages/Login';
+import { RestrictedRoute } from './RestrictedRoute';
+import { PrivateRoute } from './PrivateRoute';
 
-function App() {
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Error } from './Error';
+import img from 'components/images/Best-Coming-Soon-and-404-Error-Page-Templates-for-Your-Unique-Websites.jpg';
+
+const Contacts = lazy(() => import('../pages/Contacts').then(module => ({
+  ...module,
+  default: module.Contacts,
+})));
+
+export const App = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts);
-  const loading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
+  const { isRefreshing } = useSelector(selectAuth);
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(refreshUser());
+
+    return () => {
+      clearAuthHeader();
+    };
   }, [dispatch]);
 
-  return (
-    <AppContainer>
-      <Phonebook>Phonebook</Phonebook>
-      <ContactForm />
-      <Title>Contacts</Title>
-      {contacts.length ? (
-        <>
-          <Filter />
-          <ContactList />
-          {loading && <Loading />}
-        </>
-      ) : loading ? (
-        <Loading />
-      ) : error ? (
-        <p>Error: {error.message}</p>
-      ) : (
-        <p>Please add new contact</p>
-      )}
-    </AppContainer>
-  );
-}
+  return (!isRefreshing &&
+    (<>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route
+            path="/contacts"
+            element={<PrivateRoute redirectTo="/login" component={<Contacts />} />}
+          />
+          <Route
+            path="/register"
+            element={<RestrictedRoute redirectTo="/contacts" component={<Register />} />}
+          />
+          <Route
+            path="/login"
+            element={<RestrictedRoute redirectTo="/contacts" component={<Login />} />}
+          />
+          <Route path="*" element={<Error errorImg={img} />}
+          />
+        </Route>
+      </Routes>
 
-export default App;
+      <ToastContainer autoClose={3000} />
+    </>)
+  );
+};
+
+/* <div
+  style={{
+    height: '100vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 40,
+    color: '#010101'
+  }}
+>
+  React homework template
+</div> */
