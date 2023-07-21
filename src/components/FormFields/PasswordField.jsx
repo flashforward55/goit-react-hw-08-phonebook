@@ -1,10 +1,7 @@
 import { useState } from 'react';
 
-import {
-  VisibilityIconStyle,
-  VisibilityOffIconStyle,
-} from '../icons/icons.styled';
-
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 export const PasswordField = () => {
   const [passwordShown, setPasswordShown] = useState(false);
 
@@ -18,3 +15,11 @@ export const PasswordField = () => {
     </label>
   );
 };
+
+export const VisibilityIconStyle = () => (
+  <VisibilityIcon sx={{ fill: '#082911' }} />
+);
+
+export const VisibilityOffIconStyle = () => (
+  <VisibilityOffIcon sx={{ fill: '#082911' }} />
+);
