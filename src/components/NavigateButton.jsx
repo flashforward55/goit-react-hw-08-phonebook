@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { selectAuth } from 'redux/selectors';
+import { selectAuth } from 'redux/selector';
 import { NavLink } from 'react-router-dom';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import styled from 'styled-components';

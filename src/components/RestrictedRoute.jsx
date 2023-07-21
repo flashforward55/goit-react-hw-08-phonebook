@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import { selectAuth } from 'redux/selectors';
+import { selectAuth } from 'redux/selector';
 import { Navigate } from 'react-router-dom';
 
 export const RestrictedRoute = ({ component: Component, redirectTo = '/' }) => {
