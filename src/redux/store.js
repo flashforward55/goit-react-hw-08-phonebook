@@ -3,7 +3,7 @@ import * as rp from 'redux-persist'
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { phonebookUserReducer } from "./slices/userSlice";
-import { phonebookContactsReducer } from "./slices/contactsSlice";
+import { phonebookReducer } from "./slices/contactsSlice";
 
 const persistConfig = {
   key: 'contacts',
@@ -16,7 +16,7 @@ export const persistedUserReducer = persistReducer(persistConfig, phonebookUserR
 export const store = configureStore({
   reducer: {
     user: persistedUserReducer,
-    contacts: phonebookContactsReducer,
+    contacts: phonebookReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
