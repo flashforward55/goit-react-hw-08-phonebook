@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/axiosApi';
+import { deleteContact } from 'redux/operations/contactsOperations';
 import {
   ContactListItem,
   ContactName,

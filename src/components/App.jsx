@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts, selectIsLoading, selectError } from 'redux/selectors';
-import { fetchContacts } from 'redux/axiosApi';
+import { fetchContacts } from 'redux/operations/contactsOperations';
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Filter from './Filter';
