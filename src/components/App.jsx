@@ -10,7 +10,7 @@ import { Login } from 'pages/Login';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 
-import { ToastContainer } from 'react-toastify';
+import { Toaster } from 'react-hot-toast';
 import 'react-toastify/dist/ReactToastify.css';
 import { Error } from './Error';
 import img from 'components/images/404-Error-Page.jpg';
@@ -65,7 +65,7 @@ export const App = () => {
           </Route>
         </Routes>
 
-        <ToastContainer autoClose={3000} />
+        <Toaster autoClose={3000} />
       </>
     )
   );

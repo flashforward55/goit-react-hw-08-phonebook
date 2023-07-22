@@ -1,31 +1,27 @@
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-const toastSettings = {
-    theme: "colored",
-};
+import toast from 'react-hot-toast';
 
 export const toastSuccessAdd = () => {
-    return toast.success("Hooray! A new contact has been created 🤗", toastSettings);
+  return toast.success("Hooray, a new contact has been created 🤗");
 };
 export const toastSuccessDelete = () => {
-    return toast.success("Okay, contact has been deleted 👌", toastSettings);
+  return toast.success("Okay, contact has been deleted 👌");
 };
 export const toastWarnDuplicate = name => {
-    return toast.warn(`Sorry, ${name} is already in contacts, try adding someone else 🙈`, toastSettings);
+  return toast.error(`Number: ${name} is already in phonebook🙈`);
 };
 export const toastWarnEmptyField = () => {
-    return toast.warn(`Wow dude, it looks like you didn't enter anything in one or more of the form fields 🤔`, toastSettings);
+  return toast.error(`Please, fill in the form fields 🤔`);
 };
 export const toastError = () => {
-    return toast.error("Oops, something went wrong, please try again 🙊", toastSettings);
+  return toast.error("Oops, something went wrong, please try again 🙊");
 };
 export const toastSuccessRegister = () => {
-    return toast.success("Done! You have successfully created an account! Get ready to work  🎉", toastSettings);
+  return toast.success("Done! You have successfully created an account! 🎉");
 };
 export const toastSuccessLogIn = () => {
-    return toast.success("Hello! Nice to meet you again! Ready to work with your contacts? 🏋️‍♂️", toastSettings);
+  return toast.success("Hello! Nice to meet you again! 🏋️‍♂️");
 };
-export const toastSuccessLogOut = () => {
-    return toast.success("We hope you made it in time. See you soon 👋", toastSettings);
-};
+
+
+
+

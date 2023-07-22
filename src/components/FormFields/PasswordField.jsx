@@ -1,5 +1,10 @@
-import { useState } from "react";
-import { VisibilityIconStyle, VisibilityOffIconStyle, ButtonForVisibility, KeyIconStyle } from "../icons/icons.styled";
+import { useState } from 'react';
+import {
+  VisibilityIconStyle,
+  VisibilityOffIconStyle,
+  ButtonForVisibility,
+  KeyIconStyle,
+} from '../icons/icons.styled';
 import styled from 'styled-components';
 
 export const PasswordField = () => {
@@ -8,9 +13,15 @@ export const PasswordField = () => {
   return (
     <ClassicLabelForm>
       Password
-      <ClassicInputForm type={passwordShown ? "text" : "password"} name="password" />
+      <ClassicInputForm
+        type={passwordShown ? 'text' : 'password'}
+        name="password"
+      />
       <KeyIconStyle />
-      <ButtonForVisibility type="button" onClick={() => setPasswordShown(!passwordShown)}>
+      <ButtonForVisibility
+        type="button"
+        onClick={() => setPasswordShown(!passwordShown)}
+      >
         {passwordShown ? <VisibilityOffIconStyle /> : <VisibilityIconStyle />}
       </ButtonForVisibility>
     </ClassicLabelForm>
@@ -34,8 +45,8 @@ export const ClassicInputForm = styled.input`
 `;
 
 export const ClassicLabelForm = styled.label`
-    position: relative;
-    font-weight: 500;
-    font-size: 16px;
-    color: #fff;
+  position: relative;
+  font-weight: 500;
+  font-size: 16px;
+  color: #082911;
 `;

@@ -1,4 +1,4 @@
-import { EmailIconStyle } from "../icons/icons.styled";
+import { EmailIconStyle } from '../icons/icons.styled';
 import styled from 'styled-components';
 
 export const EmailField = () => {
@@ -28,8 +28,8 @@ export const ClassicInputForm = styled.input`
 `;
 
 export const ClassicLabelForm = styled.label`
-    position: relative;
-    font-weight: 500;
-    font-size: 16px;
-    color: #fff;
+  position: relative;
+  font-weight: 500;
+  font-size: 16px;
+  color: #082911;
 `;

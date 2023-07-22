@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { toastSuccessRegister, toastSuccessLogIn, toastSuccessLogOut, toastError } from "components/services/toasts";
+import { toastSuccessRegister, toastSuccessLogIn, toastError } from "components/services/toasts";
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
@@ -44,7 +44,6 @@ export const logInUser = createAsyncThunk(
 export const logOutUser = createAsyncThunk('auth/logout', async (_, { rejectWithValue }) => {
   try {
     await axios.post('/users/logout');
-    toastSuccessLogOut();
     clearAuthHeader();
   } catch (error) {
     toastError();
