@@ -12,21 +12,21 @@ export const RegisterForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const form = e.target;
-    const name = form.elements.name.value;
-    const email = form.elements.email.value;
-    const password = form.elements.password.value;
-    if (name === '' || email === '' || password === '') {
+    const { name, email, password } = e.target.elements;
+
+    if (!name.value || !email.value || !password.value) {
       return toastWarnEmptyField();
     }
+
     dispatch(
       registerUser({
-        name,
-        email,
-        password,
+        name: name.value,
+        email: email.value,
+        password: password.value,
       })
     );
-    form.reset();
+
+    e.target.reset();
   };
 
   return (

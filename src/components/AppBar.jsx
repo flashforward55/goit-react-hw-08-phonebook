@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { Navigation } from "./Navigation";
-import { AuthNav } from "./AuthNav/AuthNav";
-import { UserMenu } from "./UserMenu/UserMenu";
-import { useSelector } from "react-redux";
-import { selectAuth } from "redux/selector";
-import { MobMenu } from "./MobMenu/MobMenu";
+import { Navigation } from './Navigation';
+import { AuthNav } from './AuthNav/AuthNav';
+import { UserMenu } from './UserMenu/UserMenu';
+import { useSelector } from 'react-redux';
+import { selectAuth } from 'redux/selector';
+import { MobMenu } from './MobMenu/MobMenu';
 
 export const AppBar = () => {
   const { isLoggedIn } = useSelector(selectAuth);
@@ -13,10 +13,8 @@ export const AppBar = () => {
     <StyledHeader>
       <Navigation />
       <MobMenu />
-      <UserAuthWrap>
-        {isLoggedIn ? <UserMenu /> : <AuthNav />}
-      </UserAuthWrap>
-    </StyledHeader >
+      <UserAuthWrap>{isLoggedIn ? <UserMenu /> : <AuthNav />}</UserAuthWrap>
+    </StyledHeader>
   );
 };
 
@@ -29,7 +27,7 @@ const StyledHeader = styled.header`
   max-width: 1280px;
   margin-bottom: 5px;
   padding: 16px;
-  background-color: #082911;
+  background-color: #3f51b5;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
