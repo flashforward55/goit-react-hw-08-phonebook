@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { selectContacts } from "redux/selector";
-import { addNewContact } from "redux/operations/contactsOperations";
-import { toastWarnDuplicate } from "components/services/toasts";
-import { PersonIconStyle, LocalPhoneIconStyle } from "components/icons/icons.styled";
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectContacts } from 'redux/selector';
+import { addNewContact } from 'redux/api/contactsApi';
+import { toastWarnDuplicate } from 'components/services/toasts';
+import {
+  PersonIconStyle,
+  LocalPhoneIconStyle,
+} from 'components/icons/icons.styled';
 import AddIcCallIcon from '@mui/icons-material/AddIcCall';
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -14,13 +17,15 @@ export const ContactForm = () => {
   const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
-  const onSubmitForm = (event) => {
+  const onSubmitForm = event => {
     event.preventDefault();
-    const checkContact = contacts.some(contact => contact.name.toLowerCase() === name.toLowerCase());
+    const checkContact = contacts.some(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
     if (checkContact === true) {
       reset();
       return toastWarnDuplicate(name);
-    };
+    }
     const newContact = {
       name,
       number,
@@ -35,7 +40,8 @@ export const ContactForm = () => {
 
   return (
     <ClassicFormStyle onSubmit={onSubmitForm}>
-      <ClassicLabelForm>Name
+      <ClassicLabelForm>
+        Name
         <ClassicInputForm
           type="text"
           name="name"
@@ -43,11 +49,12 @@ export const ContactForm = () => {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           value={name}
-          onChange={(event) => setName(event.target.value)}
+          onChange={event => setName(event.target.value)}
         />
         <PersonIconStyle />
       </ClassicLabelForm>
-      <ClassicLabelForm>Number
+      <ClassicLabelForm>
+        Number
         <ClassicInputForm
           type="tel"
           name="number"
@@ -55,32 +62,35 @@ export const ContactForm = () => {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           value={number}
-          onChange={(event) => setNumber(event.target.value)}
+          onChange={event => setNumber(event.target.value)}
         />
         <LocalPhoneIconStyle />
       </ClassicLabelForm>
-      <ClassicButton type="submit">Add contact<AddIcCallIcon sx={{ marginLeft: "5px" }} /></ClassicButton>
+      <ClassicButton type="submit">
+        Add contact
+        <AddIcCallIcon sx={{ marginLeft: '5px' }} />
+      </ClassicButton>
     </ClassicFormStyle>
   );
 };
 
 export const ClassicFormStyle = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 280px;
-    margin: 0 auto;
-    padding: 32px;
-    border:2px solid #082911;
-    border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 280px;
+  margin: 0 auto;
+  padding: 32px;
+  border: 2px solid #082911;
+  border-radius: 4px;
 `;
 
 export const ClassicLabelForm = styled.label`
-    position: relative;
-    font-weight: 500;
-    font-size: 16px;
-    color: #fff;
+  position: relative;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
 `;
 
 export const ClassicInputForm = styled.input`

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { logOutUser } from 'redux/operations/userOperations';
-import { selectAuth } from "redux/selector";
+import { logOutUser } from 'redux/api/userApi';
+import { selectAuth } from 'redux/selector';
 import { UserMenuDiv, UserEmail, ButtonForLogOut } from './UserMenu.styled';
 import { AvatarStyle } from 'components/icons/icons.styled';
 import { LogoutIconStyle } from 'components/icons/icons.styled';
@@ -18,14 +18,19 @@ export const UserMenu = ({ handleToggleShow }) => {
     <UserMenuDiv>
       <AvatarStyle letter={userMainLetter} color={randomColor} />
       <UserEmail>{user.email}</UserEmail>
-      <ButtonForLogOut type='button' onClick={() => dispatch(logOutUser())}>
-        Log Out<LogoutIconStyle />
+      <ButtonForLogOut type="button" onClick={() => dispatch(logOutUser())}>
+        Log Out
+        <LogoutIconStyle />
       </ButtonForLogOut>
-      <MobButtonForLogOut type='button' onClick={() => {
-        dispatch(logOutUser())
-        handleToggleShow()
-      }}>
-        Log Out<LogoutIconStyle />
+      <MobButtonForLogOut
+        type="button"
+        onClick={() => {
+          dispatch(logOutUser());
+          handleToggleShow();
+        }}
+      >
+        Log Out
+        <LogoutIconStyle />
       </MobButtonForLogOut>
     </UserMenuDiv>
   );

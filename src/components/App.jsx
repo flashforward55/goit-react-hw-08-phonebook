@@ -1,7 +1,7 @@
 import { lazy, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuth } from 'redux/selector';
-import { clearAuthHeader, refreshUser } from 'redux/operations/userOperations';
+import { clearAuthHeader, refreshUser } from 'redux/api/userApi';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
 import { Home } from 'pages/Home';
@@ -15,10 +15,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Error } from './Error';
 import img from 'components/images/Best-Coming-Soon-and-404-Error-Page-Templates-for-Your-Unique-Websites.jpg';
 
-const Contacts = lazy(() => import('../pages/Contacts').then(module => ({
-  ...module,
-  default: module.Contacts,
-})));
+const Contacts = lazy(() =>
+  import('../pages/Contacts').then(module => ({
+    ...module,
+    default: module.Contacts,
+  }))
+);
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -32,30 +34,40 @@ export const App = () => {
     };
   }, [dispatch]);
 
-  return (!isRefreshing &&
-    (<>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route
-            path="/contacts"
-            element={<PrivateRoute redirectTo="/login" component={<Contacts />} />}
-          />
-          <Route
-            path="/register"
-            element={<RestrictedRoute redirectTo="/contacts" component={<Register />} />}
-          />
-          <Route
-            path="/login"
-            element={<RestrictedRoute redirectTo="/contacts" component={<Login />} />}
-          />
-          <Route path="*" element={<Error errorImg={img} />}
-          />
-        </Route>
-      </Routes>
+  return (
+    !isRefreshing && (
+      <>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute redirectTo="/login" component={<Contacts />} />
+              }
+            />
+            <Route
+              path="/register"
+              element={
+                <RestrictedRoute
+                  redirectTo="/contacts"
+                  component={<Register />}
+                />
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <RestrictedRoute redirectTo="/contacts" component={<Login />} />
+              }
+            />
+            <Route path="*" element={<Error errorImg={img} />} />
+          </Route>
+        </Routes>
 
-      <ToastContainer autoClose={3000} />
-    </>)
+        <ToastContainer autoClose={3000} />
+      </>
+    )
   );
 };
 

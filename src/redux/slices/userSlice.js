@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { registerUser, logInUser, logOutUser, refreshUser } from "../operations/userOperations";
+import { registerUser, logInUser, logOutUser, refreshUser } from "../api/userApi";
 
 const handleAuthUser = (state, action) => {
   const { user, token } = action.payload;

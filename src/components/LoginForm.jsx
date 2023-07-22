@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { logInUser } from 'redux/operations/userOperations';
+import { logInUser } from 'redux/api/userApi';
 import { EmailField } from 'components/FormFields/EmailField';
 import { PasswordField } from 'components/FormFields/PasswordField';
 import { toastWarnEmptyField } from 'components/services/toasts';
@@ -14,7 +14,7 @@ export const LoginForm = () => {
     const form = e.currentTarget;
     const email = form.elements.email.value;
     const password = form.elements.password.value;
-    if (email === "" || password === "") {
+    if (email === '' || password === '') {
       return toastWarnEmptyField();
     }
     dispatch(
@@ -30,21 +30,24 @@ export const LoginForm = () => {
     <ClassicFormStyle onSubmit={handleSubmitLogIn} autoComplete="on">
       <EmailField />
       <PasswordField />
-      <ClassicButton type="submit">Log In<StyledLoginIcon /></ClassicButton>
+      <ClassicButton type="submit">
+        Log In
+        <StyledLoginIcon />
+      </ClassicButton>
     </ClassicFormStyle>
   );
 };
 
 export const ClassicFormStyle = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 280px;
-    margin: 0 auto;
-    padding: 32px;
-    border:2px solid #082911;
-    border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 280px;
+  margin: 0 auto;
+  padding: 32px;
+  border: 2px solid #082911;
+  border-radius: 4px;
 `;
 
 export const ClassicButton = styled.button`
@@ -67,7 +70,6 @@ export const ClassicButton = styled.button`
     background-color: #decea9;
   }
 `;
-
 
 const StyledLoginIcon = styled(LoginIcon)`
   margin-left: 5px;
