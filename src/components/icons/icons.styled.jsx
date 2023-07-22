@@ -10,10 +10,10 @@ import { Avatar } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 const iconStyle = {
-  position: "absolute",
-  top: "35px",
-  left: "8px",
-  fill: "#082911",
+  position: 'absolute',
+  top: '35px',
+  left: '8px',
+  fill: '#3f51b5',
 };
 
 export const EmailIconStyle = () => <EmailIcon sx={{ ...iconStyle }} />;
@@ -22,24 +22,42 @@ export const KeyIconStyle = () => <KeyIcon sx={{ ...iconStyle }} />;
 
 export const PersonIconStyle = () => <PersonIcon sx={{ ...iconStyle }} />;
 
-export const LocalPhoneIconStyle = () => <LocalPhoneIcon sx={{ ...iconStyle }} />;
+export const LocalPhoneIconStyle = () => (
+  <LocalPhoneIcon sx={{ ...iconStyle }} />
+);
 
 export const SearchIconStyle = () => <SearchIcon sx={{ ...iconStyle }} />;
 
-export const VisibilityIconStyle = () => <VisibilityIcon sx={{ fill: "#082911" }} />;
+export const VisibilityIconStyle = () => (
+  <VisibilityIcon sx={{ fill: '#3f51b5' }} />
+);
 
-export const VisibilityOffIconStyle = () => <VisibilityOffIcon sx={{ fill: "#082911" }} />;
+export const VisibilityOffIconStyle = () => (
+  <VisibilityOffIcon sx={{ fill: '#3f51b5' }} />
+);
 
-export const AvatarStyle = ({ letter, color }) => <Avatar sx={{ width: "38px", height: "38px", marginRight: "10px", bgcolor: color, cursor: "pointer" }}>{letter}</Avatar>;
+export const AvatarStyle = ({ letter, color }) => (
+  <Avatar
+    sx={{
+      width: '38px',
+      height: '38px',
+      marginRight: '10px',
+      bgcolor: color,
+      cursor: 'pointer',
+    }}
+  >
+    {letter}
+  </Avatar>
+);
 
-export const LogoutIconStyle = () => <LogoutIcon sx={{ marginLeft: "5px" }} />
+export const LogoutIconStyle = () => <LogoutIcon sx={{ marginLeft: '5px' }} />;
 
 export const ButtonForVisibility = styled.button`
-    position: absolute;
-    top: 33px;
-    right: 8px;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    background: transparent;
+  position: absolute;
+  top: 33px;
+  right: 8px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
 `;
