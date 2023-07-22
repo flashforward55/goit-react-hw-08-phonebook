@@ -12,7 +12,7 @@ export const RegisterForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const form = e.currentTarget;
+    const form = e.target;
     const name = form.elements.name.value;
     const email = form.elements.email.value;
     const password = form.elements.password.value;
@@ -36,41 +36,48 @@ export const RegisterForm = () => {
       <PasswordField />
       <ClassicButton type="submit">
         Register
-        <AppRegistrationIcon sx={{ marginLeft: '5px' }} />
+        <AppRegistrationIconWrapper>
+          <AppRegistrationIcon />
+        </AppRegistrationIconWrapper>
       </ClassicButton>
     </ClassicFormStyle>
   );
 };
 
-export const ClassicFormStyle = styled.form`
+const ClassicFormStyle = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 280px;
+  max-width: 320px;
   margin: 0 auto;
   padding: 32px;
+  background-color: #f0f4f8;
   border: 2px solid #082911;
-  border-radius: 4px;
+  border-radius: 8px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
-export const ClassicButton = styled.button`
+const ClassicButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 8px;
-  border: 2px solid #082911;
+  border: none;
   border-radius: 4px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #3f51b5;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
   cursor: pointer;
-  color: #decea9;
-  background-color: #082911;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
-    transform: scale(1.15);
-    color: #082911;
-    background-color: #decea9;
+    background-color: #b53f51;
   }
+`;
+
+const AppRegistrationIconWrapper = styled.span`
+  margin-left: 5px;
 `;
