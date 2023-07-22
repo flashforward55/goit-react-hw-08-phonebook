@@ -11,19 +11,20 @@ export const LoginForm = () => {
 
   const handleSubmitLogIn = e => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const email = form.elements.email.value;
-    const password = form.elements.password.value;
-    if (email === '' || password === '') {
+    const { email, password } = e.target.elements;
+
+    if (!email.value || !password.value) {
       return toastWarnEmptyField();
     }
+
     dispatch(
       logInUser({
-        email,
-        password,
+        email: email.value,
+        password: password.value,
       })
     );
-    form.reset();
+
+    e.target.reset();
   };
 
   return (
@@ -47,30 +48,33 @@ export const ClassicFormStyle = styled.form`
   margin: 0 auto;
   padding: 32px;
   border: 2px solid #082911;
-  border-radius: 4px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f0f4f8;
 `;
 
 export const ClassicButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px;
-  border: 2px solid #082911;
+  padding: 12px;
+  border: none;
   border-radius: 4px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  color: #decea9;
-  background-color: #082911;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #3f51b5;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
-    transform: scale(1.15);
-    color: #082911;
-    background-color: #decea9;
+    background-color: #b53f51;
   }
 `;
 
 const StyledLoginIcon = styled(LoginIcon)`
   margin-left: 5px;
+  font-size: 24px;
+  color: #ffffff;
 `;
