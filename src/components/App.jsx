@@ -13,7 +13,7 @@ import { PrivateRoute } from './PrivateRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Error } from './Error';
-import img from 'components/images/Best-Coming-Soon-and-404-Error-Page-Templates-for-Your-Unique-Websites.jpg';
+import img from 'components/images/404-Error-Page.jpg';
 
 const Contacts = lazy(() =>
   import('../pages/Contacts').then(module => ({

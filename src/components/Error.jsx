@@ -12,8 +12,8 @@ export const Error = ({ errorImg, children }) => {
     <ErrorSection>
       <img
         src={errorImg}
-        alt="Wow dude, try one more time"
-        width="1000px"
+        alt="Wow, try one more time"
+        width="768px"
         heigth="700px"
       />
       {children}
@@ -41,16 +41,21 @@ Error.propTypes = {
 
 export const NavButton = styled(NavLink)`
   display: inline-flex;
-  padding: 8px;
-  border-radius: 8px;
-  border: 2px solid #082911;
-  color: bisque;
-  background-color: #082911;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3f51b5;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  &:hover {
-    color: #082911;
-    background-color: bisque;
+  &:hover,
+  &:focus {
+    background-color: #b53f51;
   }
 `;
 
