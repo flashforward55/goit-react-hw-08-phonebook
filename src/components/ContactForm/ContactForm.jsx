@@ -22,7 +22,7 @@ export const ContactForm = () => {
     const checkContact = contacts.some(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
-    if (checkContact === true) {
+    if (checkContact) {
       reset();
       return toastWarnDuplicate(name);
     }
@@ -45,7 +45,7 @@ export const ContactForm = () => {
         <ClassicInputForm
           type="text"
           name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           value={name}
@@ -58,7 +58,7 @@ export const ContactForm = () => {
         <ClassicInputForm
           type="tel"
           name="number"
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           value={number}
@@ -90,7 +90,7 @@ export const ClassicLabelForm = styled.label`
   position: relative;
   font-weight: 500;
   font-size: 16px;
-  color: #fff;
+  color: #082911;
 `;
 
 export const ClassicInputForm = styled.input`
@@ -114,18 +114,17 @@ export const ClassicButton = styled.button`
   justify-content: center;
   align-items: center;
   padding: 8px;
-  border: 2px solid #082911;
+  border: 2px solid #3f51b5;
   border-radius: 4px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   color: #decea9;
-  background-color: #082911;
+  background-color: #3f51b5;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
-    transform: scale(1.15);
-    color: #082911;
+    color: #3f51b5;
     background-color: #decea9;
   }
 `;
