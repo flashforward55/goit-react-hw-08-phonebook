@@ -3,7 +3,7 @@ import { AuthListItem, AuthTitle } from 'components/AuthNav/AuthNav.styled';
 
 export const MobMenuWrap = styled.div`
   position: fixed;
-  background-color: #082911;
+  background-color: #3f51b5;
   background-image: linear-gradient(
     335deg,
     rgba(0, 0, 0, 0.5) 0%,
@@ -27,13 +27,12 @@ export const MobMenuOpenButton = styled.button`
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   color: #decea9;
-  background-color: #082911;
+  background-color: #3f51b5;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
-    transform: scale(1.15);
-    color: #082911;
+    color: #3f51b5;
     background-color: #decea9;
   }
   display: none;
@@ -101,17 +100,16 @@ export const MobButtonForLogOut = styled.button`
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   color: #decea9;
-  background-color: #082911;
+  background-color: #3f51b5;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
-    transform: scale(1.15);
     color: #082911;
     background-color: #decea9;
   }
   display: none;
-  @media (max-width: 768px){
+  @media (max-width: 768px) {
     display: flex;
     color: #082911;
     background-color: #e2e5e5;
