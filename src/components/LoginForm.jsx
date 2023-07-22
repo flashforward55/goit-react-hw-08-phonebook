@@ -69,7 +69,7 @@ export const ClassicButton = styled.button`
 
   &:hover,
   &:focus {
-    background-color: #b53f51;
+    background-color: #5c6bc0;
   }
 `;
 

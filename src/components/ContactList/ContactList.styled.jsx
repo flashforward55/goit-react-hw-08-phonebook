@@ -23,12 +23,12 @@ export const ContactWrapper = styled.div`
 export const ContactNumber = styled.p`
   font-weight: 500;
   font-size: 16px;
-  color: #fff;
+  color: #082911;
   cursor: pointer;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
   &:focus {
-    text-shadow: 0px 5px 10px bisque;
+    text-shadow: 0px 0px 10px #decea9;
   }
 `;
 
@@ -36,18 +36,18 @@ export const ButtonForDelete = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #082911;
+  border: 2px solid #3f51b5;
   border-radius: 4px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   color: #decea9;
-  background-color: #082911;
+  background-color: #3f51b5;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
-    transform: scale(1.15);
-    color: #082911;
+    transform: scale(1.01);
+    color: #3f51b5;
     background-color: #decea9;
   }
   padding: 4px;
