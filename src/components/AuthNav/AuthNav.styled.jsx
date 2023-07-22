@@ -29,12 +29,12 @@ export const AuthTitle = styled(NavLink)`
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    color: #082911;
-    background-color: rgba(255, 228, 196, 0.8);
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
   }
 
   &.active {
     color: #082911;
-    background-color: bisque;
+    background-color: rgb(222, 206, 169);
   }
 `;

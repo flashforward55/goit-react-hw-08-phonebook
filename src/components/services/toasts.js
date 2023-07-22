@@ -1,7 +1,7 @@
 import toast from 'react-hot-toast';
 
 export const toastSuccessAdd = () => {
-  return toast.success("Cheers, new contact has been created 🤗", { duration: 3000 });
+  return toast.success("Cheers, a new contact has been created", { duration: 3000 });
 };
 export const toastSuccessDelete = () => {
   return toast.success("Okay, contact has been deleted 👌", { duration: 3000 });
@@ -19,7 +19,7 @@ export const toastSuccessRegister = () => {
   return toast.success("Done! You have successfully created an account!", { duration: 3000 });
 };
 export const toastSuccessLogIn = () => {
-  return toast.success("Hello! Nice to meet you again!", { duration: 3000 });
+  return toast.success("Hello! Nice to meet you again! 🤗", { duration: 3000 });
 };
 
 
