@@ -11,7 +11,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 
 const iconStyle = {
   position: 'absolute',
-  top: '35px',
+  top: '30px',
   left: '8px',
   fill: '#3f51b5',
 };
@@ -54,7 +54,7 @@ export const LogoutIconStyle = () => <LogoutIcon sx={{ marginLeft: '5px' }} />;
 
 export const ButtonForVisibility = styled.button`
   position: absolute;
-  top: 33px;
+  top: 30px;
   right: 8px;
   cursor: pointer;
   outline: none;
