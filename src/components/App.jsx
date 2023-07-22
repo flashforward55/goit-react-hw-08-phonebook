@@ -65,7 +65,7 @@ export const App = () => {
           </Route>
         </Routes>
 
-        <Toaster autoClose={3000} />
+        <Toaster />
       </>
     )
   );
