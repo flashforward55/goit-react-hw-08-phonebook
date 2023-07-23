@@ -7,7 +7,7 @@ import { Layout } from './Layout';
 import Home from 'pages/Home';
 import Register from 'pages/Register';
 import Login from 'pages/Login';
-import { RestrictedRoute } from './RestrictedRoute';
+import RestrictedRoute from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 
 import { Toaster } from 'react-hot-toast';
