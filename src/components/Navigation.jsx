@@ -10,9 +10,7 @@ export const Navigation = () => {
     <AppBar>
       <AppBarList>
         <AppBarItem>
-          <NavTitle to="/" end>
-            Home
-          </NavTitle>
+          <NavTitle to="/">Home</NavTitle>
         </AppBarItem>
         {isLoggedIn && (
           <AppBarItem>
