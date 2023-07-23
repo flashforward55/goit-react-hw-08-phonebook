@@ -1,7 +1,7 @@
-import { EmailIconStyle } from '../../icons/icons.styled';
+import { EmailIconStyle } from 'components/icons/icons.styled';
 import { ClassicInputForm, ClassicLabelForm } from './EmailField.styled';
 
- const EmailField = () => {
+const EmailField = () => {
   return (
     <ClassicLabelForm>
       Email
@@ -11,4 +11,4 @@ import { ClassicInputForm, ClassicLabelForm } from './EmailField.styled';
   );
 };
 
-export default EmailField
+export default EmailField;

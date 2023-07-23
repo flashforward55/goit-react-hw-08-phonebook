@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { logOutUser } from 'redux/api/userApi';
 import { selectAuth } from 'redux/selector';
-import { UserMenuDiv, UserEmail, ButtonForLogOut } from './UserMenu.styled';
 import { AvatarStyle } from 'components/icons/icons.styled';
 import { LogoutIconStyle } from 'components/icons/icons.styled';
 import { MobButtonForLogOut } from 'components/MobMenu/MobMenu.styled';
+import { UserMenuDiv, UserEmail, ButtonForLogOut } from './UserMenu.styled';
 
 const UserMenu = ({ handleToggleShow }) => {
   const dispatch = useDispatch();

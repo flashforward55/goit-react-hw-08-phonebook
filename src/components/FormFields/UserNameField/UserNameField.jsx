@@ -1,4 +1,4 @@
-import { PersonIconStyle } from '../../icons/icons.styled';
+import { PersonIconStyle } from 'components/icons/icons.styled';
 import { ClassicInputForm, ClassicLabelForm } from './UserNameField.styled';
 
 const UserNameField = () => {

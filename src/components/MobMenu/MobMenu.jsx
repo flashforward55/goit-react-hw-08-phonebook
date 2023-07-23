@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux';
 import { selectAuth } from 'redux/selector';
 import { useState } from 'react';
+import UserMenu from 'components/UserMenu';
+import { MobAuthNav } from 'components/MobMenu/MobAuthNav';
 import {
   MobMenuOpenButton,
   MobMenuWrap,
@@ -8,8 +10,6 @@ import {
   StyledMenuIcon,
   StyledCloseIcon,
 } from './MobMenu.styled';
-import { MobAuthNav } from 'components/MobMenu/MobAuthNav';
-import UserMenu from 'components/UserMenu';
 
 export const MobMenu = () => {
   const { isLoggedIn } = useSelector(selectAuth);

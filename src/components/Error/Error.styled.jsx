@@ -1,6 +1,6 @@
-import ReplyIcon from '@mui/icons-material/Reply';
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import ReplyIcon from '@mui/icons-material/Reply';
 
 export const ErrorSection = styled.section`
   text-align: center;

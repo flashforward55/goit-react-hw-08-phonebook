@@ -1,16 +1,16 @@
 import { lazy, useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuth } from 'redux/selector';
 import { clearAuthHeader, refreshUser } from 'redux/api/userApi';
-import { Route, Routes } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Home from 'pages/Home';
 import Register from 'pages/Register';
 import Login from 'pages/Login';
-import Layout from './Layout';
-import RestrictedRoute from './RestrictedRoute';
-import PrivateRoute from './PrivateRoute';
-import Error from './Error';
+import Layout from 'components/Layout';
+import RestrictedRoute from 'components/RestrictedRoute';
+import PrivateRoute from 'components/PrivateRoute';
+import Error from 'components/Error';
 import img from 'components/images/404-Error-Page.jpg';
 
 const Contacts = lazy(() =>
@@ -20,7 +20,7 @@ const Contacts = lazy(() =>
   }))
 );
 
-export const App = () => {
+const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useSelector(selectAuth);
 
@@ -62,9 +62,10 @@ export const App = () => {
             <Route path="*" element={<Error errorImg={img} />} />
           </Route>
         </Routes>
-
         <Toaster />
       </>
     )
   );
 };
+
+export default App;

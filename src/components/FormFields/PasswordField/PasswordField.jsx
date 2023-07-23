@@ -4,7 +4,7 @@ import {
   VisibilityOffIconStyle,
   ButtonForVisibility,
   KeyIconStyle,
-} from '../../icons/icons.styled';
+} from 'components/icons/icons.styled';
 import { ClassicInputForm, ClassicLabelForm } from './PasswordField.styled';
 
 const PasswordField = () => {
