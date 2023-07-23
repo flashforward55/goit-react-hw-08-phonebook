@@ -7,7 +7,7 @@ import { AvatarStyle } from 'components/icons/icons.styled';
 import { LogoutIconStyle } from 'components/icons/icons.styled';
 import { MobButtonForLogOut } from 'components/MobMenu/MobMenu.styled';
 
-export const UserMenu = ({ handleToggleShow }) => {
+const UserMenu = ({ handleToggleShow }) => {
   const dispatch = useDispatch();
   const { user } = useSelector(selectAuth);
 
@@ -39,3 +39,5 @@ export const UserMenu = ({ handleToggleShow }) => {
 UserMenu.propTypes = {
   handleToggleShow: PropTypes.func,
 };
+
+export default UserMenu;

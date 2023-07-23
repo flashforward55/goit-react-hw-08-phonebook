@@ -3,14 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectAuth } from 'redux/selector';
 import { clearAuthHeader, refreshUser } from 'redux/api/userApi';
 import { Route, Routes } from 'react-router-dom';
-import { Layout } from './Layout/Layout';
+import { Toaster } from 'react-hot-toast';
 import Home from 'pages/Home';
 import Register from 'pages/Register';
 import Login from 'pages/Login';
+import Layout from './Layout';
 import RestrictedRoute from './RestrictedRoute';
 import PrivateRoute from './PrivateRoute';
-
-import { Toaster } from 'react-hot-toast';
 import Error from './Error';
 import img from 'components/images/404-Error-Page.jpg';
 

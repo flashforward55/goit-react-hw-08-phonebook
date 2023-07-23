@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 import { AuthListItem, AuthTitle } from 'components/AuthNav/AuthNav.styled';
+import CloseIcon from '@mui/icons-material/Close';
+import MenuIcon from '@mui/icons-material/Menu';
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import LoginIcon from '@mui/icons-material/Login';
 
 export const MobMenuWrap = styled.div`
   position: fixed;
@@ -114,4 +118,24 @@ export const MobButtonForLogOut = styled.button`
     color: #082911;
     background-color: #e2e5e5;
   }
+`;
+
+export const StyledMenuIcon = styled(MenuIcon)`
+  width: 36px;
+  height: 40px;
+`;
+
+export const StyledCloseIcon = styled(CloseIcon)`
+  width: 36px;
+  height: 40px;
+`;
+
+export const StyledAppRegistrationIcon = styled(AppRegistrationIcon)`
+  margin-left: 5px;
+  margin-top: 8px;
+`;
+
+export const StyledLoginIcon = styled(LoginIcon)`
+  margin-left: 5px;
+  margin-top: 8px;
 `;
