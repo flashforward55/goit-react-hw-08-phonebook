@@ -1,26 +1,5 @@
-import { useSelector } from 'react-redux';
-import { selectAuth } from 'redux/selector';
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-
-export const Navigation = () => {
-  const { isLoggedIn } = useSelector(selectAuth);
-
-  return (
-    <AppBar>
-      <AppBarList>
-        <AppBarItem>
-          <NavTitle to="/">Home</NavTitle>
-        </AppBarItem>
-        {isLoggedIn && (
-          <AppBarItem>
-            <NavTitle to="/contacts">Contacts</NavTitle>
-          </AppBarItem>
-        )}
-      </AppBarList>
-    </AppBar>
-  );
-};
+import { NavLink } from 'react-router-dom';
 
 export const AppBar = styled.nav`
   padding: 16px;

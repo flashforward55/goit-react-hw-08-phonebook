@@ -1,5 +1,5 @@
 import { LoginForm } from 'components/LoginForm';
-import { NavigateLink } from 'components/NavigateLink';
+import NavigateLink from 'components/NavigateLink';
 import { SecondTitle, StyledSection } from './Login.styled';
 
 const Login = () => {

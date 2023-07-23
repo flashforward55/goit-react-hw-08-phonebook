@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Navigation } from './Navigation';
+import Navigation from './Navigation';
 import { AuthNav } from './AuthNav/AuthNav';
 import { UserMenu } from './UserMenu/UserMenu';
 import { useSelector } from 'react-redux';
