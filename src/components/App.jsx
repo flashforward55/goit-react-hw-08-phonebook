@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectAuth } from 'redux/selector';
 import { clearAuthHeader, refreshUser } from 'redux/api/userApi';
 import { Route, Routes } from 'react-router-dom';
-import { Layout } from './Layout';
+import { Layout } from './Layout/Layout';
 import Home from 'pages/Home';
 import Register from 'pages/Register';
 import Login from 'pages/Login';

@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { AppBar } from './AppBar';
-import Loading from './Loading';
-import styled from 'styled-components';
+import { AppBar } from '../AppBar';
+import Loading from 'components/Loading';
+import { MainContainer } from './Layout.styled';
 
 export const Layout = () => {
   return (
@@ -17,9 +17,4 @@ export const Layout = () => {
   );
 };
 
-const MainContainer = styled.main`
-  margin: 0 auto;
-  margin-bottom: 5px;
-  max-width: 1280px;
-  height: 100%;
-`;
+export default Layout;
