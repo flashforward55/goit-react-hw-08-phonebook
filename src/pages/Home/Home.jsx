@@ -1,4 +1,4 @@
-import { NavigateButton } from 'components/NavigateButton';
+import NavigateButton from 'components/NavigateButton';
 import { MainTitle, MainWrap, SecondTitle } from './Home.styled';
 
 const Home = () => {

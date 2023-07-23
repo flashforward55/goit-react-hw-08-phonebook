@@ -1,4 +1,4 @@
-import { LoginForm } from 'components/LoginForm';
+import LoginForm from 'components/LoginForm';
 import NavigateLink from 'components/NavigateLink';
 import { SecondTitle, StyledSection } from './Login.styled';
 

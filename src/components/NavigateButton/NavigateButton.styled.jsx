@@ -1,19 +1,6 @@
-import { useSelector } from 'react-redux';
-import { selectAuth } from 'redux/selector';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-
-export const NavigateButton = () => {
-  const { isLoggedIn } = useSelector(selectAuth);
-
-  return (
-    <NavButton to={isLoggedIn ? '/contacts' : '/register'}>
-      {isLoggedIn ? 'Go to Contacts' : "Let's Get Started"}
-      <StyledRocketLaunchIcon />
-    </NavButton>
-  );
-};
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 export const NavButton = styled(NavLink)`
   display: inline-flex;
@@ -35,7 +22,7 @@ export const NavButton = styled(NavLink)`
   }
 `;
 
-const StyledRocketLaunchIcon = styled(RocketLaunchIcon)`
+export const StyledRocketLaunchIcon = styled(RocketLaunchIcon)`
   margin-left: 8px;
   font-size: 24px;
 `;
