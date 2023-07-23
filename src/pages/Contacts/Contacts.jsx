@@ -11,7 +11,7 @@ import {
   WarningMessage,
 } from './Contacts.styled';
 
-const Contacts = () => {
+export const Contacts = () => {
   const loading = useSelector(selectIsLoading);
   const contacts = useSelector(selectContacts);
 
@@ -33,5 +33,3 @@ const Contacts = () => {
     </>
   );
 };
-
-export default Contacts;
