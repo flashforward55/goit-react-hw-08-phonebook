@@ -1,5 +1,6 @@
 import NavigateButton from 'components/NavigateButton';
 import { MainTitle, MainWrap, SecondTitle } from './Home.styled';
+import { TechnologiesSection } from 'components/TechnologiesSection/TechnologiesSection';
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       </SecondTitle>
       <SecondTitle>Are you ready to get started?</SecondTitle>
       <NavigateButton />
+      <TechnologiesSection />
     </MainWrap>
   );
 };

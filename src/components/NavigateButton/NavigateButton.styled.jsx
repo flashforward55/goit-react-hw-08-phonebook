@@ -7,6 +7,7 @@ export const NavButton = styled(NavLink)`
   justify-content: center;
   align-items: center;
   padding: 12px 24px;
+  margin-bottom: 100px;
   border-radius: 8px;
   border: 2px solid #3f51b5;
   color: bisque;
