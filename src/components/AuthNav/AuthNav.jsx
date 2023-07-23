@@ -1,30 +1,28 @@
-import { AuthList, AuthListItem, AuthTitle } from './AuthNav.styled';
-import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
-import LoginIcon from '@mui/icons-material/Login';
-import styled from 'styled-components';
+import {
+  AuthList,
+  AuthListItem,
+  AuthTitle,
+  StyledAppRegistrationIcon,
+  StyledLoginIcon,
+} from './AuthNav.styled';
 
-export const AuthNav = () => {
+const AuthNav = () => {
   return (
     <AuthList>
       <AuthListItem>
         <AuthTitle to="/register">
-          Register<StyledAppRegistrationIcon />
+          Register
+          <StyledAppRegistrationIcon />
         </AuthTitle>
       </AuthListItem>
       <AuthListItem>
         <AuthTitle to="/login">
-          Log In<StyledLoginIcon />
+          Log In
+          <StyledLoginIcon />
         </AuthTitle>
       </AuthListItem>
     </AuthList>
   );
 };
 
-const StyledAppRegistrationIcon = styled(AppRegistrationIcon)`
-  margin-left: 5px;
-`;
-
-const StyledLoginIcon = styled(LoginIcon)`
-  margin-left: 5px;
-
-`;
+export default AuthNav;

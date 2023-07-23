@@ -5,7 +5,7 @@ import { fetchContacts } from 'redux/api/contactsApi';
 import { useEffect } from 'react';
 import ContactItemEntrails from './ContactItemEntrails';
 
-export const ContactList = () => {
+ const ContactList = () => {
   const dispatch = useDispatch();
   const { isLoggedIn } = useSelector(selectAuth);
   const filteredContacts = useSelector(selectFilteredContacts);
@@ -28,3 +28,5 @@ export const ContactList = () => {
     </ContactListStyle>
   );
 };
+
+export default ContactList

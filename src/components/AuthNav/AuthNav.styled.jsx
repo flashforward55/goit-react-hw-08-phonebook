@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import LoginIcon from '@mui/icons-material/Login';
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 
 export const AuthList = styled.ul`
   display: flex;
@@ -37,4 +39,12 @@ export const AuthTitle = styled(NavLink)`
     color: #082911;
     background-color: rgb(222, 206, 169);
   }
+`;
+
+export const StyledAppRegistrationIcon = styled(AppRegistrationIcon)`
+  margin-left: 5px;
+`;
+
+export const StyledLoginIcon = styled(LoginIcon)`
+  margin-left: 5px;
 `;
