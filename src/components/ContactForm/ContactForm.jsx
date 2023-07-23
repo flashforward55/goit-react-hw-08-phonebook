@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/selector';
 import { addNewContact } from 'redux/api/contactsApi';
-import { toastWarnDuplicate } from 'components/services/toasts';
+import { toastWarnDuplicate } from 'services/toasts';
 import {
   PersonIconStyle,
   LocalPhoneIconStyle,
@@ -15,7 +15,7 @@ import {
   ClassicLabelForm,
 } from './ContactForm.styled';
 
- const ContactForm = () => {
+const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -79,4 +79,4 @@ import {
   );
 };
 
-export default ContactForm
+export default ContactForm;

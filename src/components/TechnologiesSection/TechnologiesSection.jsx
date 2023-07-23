@@ -1,6 +1,3 @@
-// Libs
-/* import { ImStack } from 'react-icons/im'; */
-// Data
 import data from 'data/technologies.json';
 import { TechList, TechnoligiesWrap } from './TechnologiesSection.styled';
 import { TechnologiesItem } from 'components/TechnologiesItem/TechnologiesItem';

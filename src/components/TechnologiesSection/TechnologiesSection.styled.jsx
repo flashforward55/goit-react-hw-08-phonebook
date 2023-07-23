@@ -1,4 +1,3 @@
-// Libs
 import styled from 'styled-components';
 
 export const TechnoligiesWrap = styled.div`
@@ -10,8 +9,6 @@ export const TechnoligiesWrap = styled.div`
 
 export const TechList = styled.ul`
   display: grid;
-  //width: 100%;
-
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 16px;
   padding: 16px;

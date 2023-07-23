@@ -3,7 +3,7 @@ import { registerUser } from 'redux/api/userApi';
 import UserNameField from 'components/FormFields/UserNameField';
 import EmailField from 'components/FormFields/EmailField';
 import PasswordField from 'components/FormFields/PasswordField';
-import { toastWarnEmptyField } from 'components/services/toasts';
+import { toastWarnEmptyField } from 'services/toasts';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import {
   AppRegistrationIconWrapper,

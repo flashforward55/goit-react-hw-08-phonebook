@@ -1,6 +1,4 @@
-// Libs
 import PropTypes from 'prop-types';
-// Styled components
 import { TechLink } from './TechnologiesItem.styled';
 
 export const TechnologiesItem = ({ title, link, logo }) => {
