@@ -1,4 +1,4 @@
-import { RegisterForm } from 'components/RegisterForm';
+import RegisterForm from 'components/RegisterForm';
 import { NavigateLink } from 'components/NavigateLink';
 import { SecondTitle, StyledSection } from './Register.styled';
 
