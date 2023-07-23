@@ -1,15 +1,4 @@
-import { EmailIconStyle } from '../icons/icons.styled';
 import styled from 'styled-components';
-
-export const EmailField = () => {
-  return (
-    <ClassicLabelForm>
-      Email
-      <ClassicInputForm type="email" name="email" />
-      <EmailIconStyle />
-    </ClassicLabelForm>
-  );
-};
 
 export const ClassicInputForm = styled.input`
   display: block;

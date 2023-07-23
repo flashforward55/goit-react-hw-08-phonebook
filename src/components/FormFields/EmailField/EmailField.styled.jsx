@@ -1,15 +1,4 @@
-import { PersonIconStyle } from '../icons/icons.styled';
 import styled from 'styled-components';
-
-export const UserNameField = () => {
-  return (
-    <ClassicLabelForm>
-      Username
-      <ClassicInputForm type="text" name="name" />
-      <PersonIconStyle />
-    </ClassicLabelForm>
-  );
-};
 
 export const ClassicInputForm = styled.input`
   display: block;

@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { logInUser } from 'redux/api/userApi';
-import { EmailField } from 'components/FormFields/EmailField';
-import { PasswordField } from 'components/FormFields/PasswordField';
+import EmailField from 'components/FormFields/EmailField';
+import PasswordField from 'components/FormFields/PasswordField';
 import { toastWarnEmptyField } from 'components/services/toasts';
 import {
   ClassicButton,
