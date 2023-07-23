@@ -1,12 +1,9 @@
-import { ContactItemEntrails } from 'components/ContactList/ContactListItem';
-import {
-  ContactListStyle,
-  ContactListItem,
-} from 'components/ContactList/ContactList.styled';
+import { ContactListStyle, ContactListItem } from './ContactList.styled';
 import { selectFilteredContacts, selectAuth } from 'redux/selector';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/api/contactsApi';
 import { useEffect } from 'react';
+import ContactItemEntrails from './ContactItemEntrails';
 
 export const ContactList = () => {
   const dispatch = useDispatch();

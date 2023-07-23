@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
-import {
-  ContactWrapper,
-  ContactNumber,
-  ButtonForDelete,
-} from 'components/ContactList/ContactList.styled';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/api/contactsApi';
 import DeleteIcon from '@mui/icons-material/Delete';
+import {
+  ButtonForDelete,
+  ContactNumber,
+  ContactWrapper,
+} from './ContactItemEntrails.styled';
 
-export const ContactItemEntrails = ({ id, name, number }) => {
+const ContactItemEntrails = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
   return (
@@ -31,3 +31,5 @@ ContactItemEntrails.propTypes = {
   name: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
 };
+
+export default ContactItemEntrails;
