@@ -11,7 +11,7 @@ import RestrictedRoute from './RestrictedRoute';
 import PrivateRoute from './PrivateRoute';
 
 import { Toaster } from 'react-hot-toast';
-import { Error } from './Error';
+import Error from './Error';
 import img from 'components/images/404-Error-Page.jpg';
 
 const Contacts = lazy(() =>
