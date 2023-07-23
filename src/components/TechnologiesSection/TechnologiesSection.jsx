@@ -1,8 +1,8 @@
 import data from 'data/technologies.json';
 import { TechList, TechnoligiesWrap } from './TechnologiesSection.styled';
-import { TechnologiesItem } from 'components/TechnologiesItem/TechnologiesItem';
+import TechnologiesItem from './TechnologiesItem';
 
-export const TechnologiesSection = () => {
+const TechnologiesSection = () => {
   return (
     <TechnoligiesWrap>
       <TechList>
@@ -13,3 +13,5 @@ export const TechnologiesSection = () => {
     </TechnoligiesWrap>
   );
 };
+
+export default TechnologiesSection;

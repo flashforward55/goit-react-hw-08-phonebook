@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { TechLink } from './TechnologiesItem.styled';
 
-export const TechnologiesItem = ({ title, link, logo }) => {
+const TechnologiesItem = ({ title, link, logo }) => {
   return (
     <li>
       <TechLink href={link} target="_blank" rel="noopener noreferrer">
@@ -17,3 +17,5 @@ TechnologiesItem.propTypes = {
   link: PropTypes.string.isRequired,
   logo: PropTypes.string.isRequired,
 };
+
+export default TechnologiesItem;

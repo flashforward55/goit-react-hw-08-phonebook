@@ -1,6 +1,6 @@
 import NavigateButton from 'components/NavigateButton';
+import TechnologiesSection from 'components/TechnologiesSection';
 import { MainTitle, MainWrap, SecondTitle } from './Home.styled';
-import { TechnologiesSection } from 'components/TechnologiesSection/TechnologiesSection';
 
 const Home = () => {
   return (
